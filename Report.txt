@@ -1,0 +1,5 @@
+Problem:
+-Verify email vẫn còn hạn chế vì chỉ verify trên cùng browse mình gửi request. Nếu chuyển qua browse khác thì lỗi.
+Idea slove problem:
+-Hiện tại đang lưu session trên một browse, browse khác không có session đấy nên verify lỗi. 
+=>(Tạm thời)Tắt quyền xác minh token này cho customer trên tất cả các browse.(Hì em cũng ko biết diễn tả bằng lời)
