@@ -1,0 +1,10 @@
+Places with xxxxxxxxxx need to be changed for the database to work
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=xxxxxxxxxxx
+DB_USERNAME=root
+DB_PASSWORD=xxxxxxxxxxx
+
+Then run the command: php artisan migrate
