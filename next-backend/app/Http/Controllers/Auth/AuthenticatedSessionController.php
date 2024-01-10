@@ -13,6 +13,15 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
+    public function getLoginInfo()
+    {
+        $loginInfo = [
+            'message' => 'This is the login information',
+            // Thêm thông tin khác cần thiết cho trang đăng nhập
+        ];
+
+        return response()->json($loginInfo);
+    }
     public function store(LoginRequest $request): Response
     {
         $request->authenticate();

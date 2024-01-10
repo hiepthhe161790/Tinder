@@ -21,6 +21,21 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(auth)/layout.js"
     ],
+    "/(auth)/login/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(auth)/login/page.js"
+    ],
+    "/(auth)/forgot-password/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(auth)/forgot-password/page.js"
+    ],
+    "/(auth)/password-reset/[token]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(auth)/password-reset/[token]/page.js"
+    ],
     "/(auth)/register/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -30,11 +45,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(auth)/verify-email/page.js"
-    ],
-    "/(auth)/login/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(auth)/login/page.js"
     ],
     "/(app)/layout": [
       "static/chunks/webpack.js",

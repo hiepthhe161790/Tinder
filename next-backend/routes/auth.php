@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
@@ -15,7 +16,7 @@ Route::post('/register', [RegisteredUserController::class, 'store'])
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
                 ->middleware('guest')
                 ->name('login');
-
+                Route::get('/login', [AuthenticatedSessionController::class, 'getLoginInfo'])->name('login');
 Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])
                 ->middleware('guest')
                 ->name('password.email');
@@ -35,3 +36,12 @@ Route::post('/email/verification-notification', [EmailVerificationNotificationCo
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
+Route::get('/email/verify', EmailVerificationPromptController::class)
+                ->middleware(['auth'])
+                ->name('verification.notice');
+Route::middleware('auth')->group(function () {
+                    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+                    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+                    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+                });
+                               

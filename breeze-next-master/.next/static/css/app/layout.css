@@ -655,6 +655,12 @@ select{
 .relative{
   position: relative;
 }
+.inset-0{
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
 .top-0{
   top: 0px;
 }
@@ -907,6 +913,13 @@ select{
   --tw-bg-opacity: 1;
   background-color: rgb(238 242 255 / var(--tw-bg-opacity));
 }
+.bg-gray-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+.bg-opacity-75{
+  --tw-bg-opacity: 0.75;
+}
 .fill-current{
   fill: currentColor;
 }
@@ -915,6 +928,9 @@ select{
 }
 .p-2{
   padding: 0.5rem;
+}
+.p-4{
+  padding: 1rem;
 }
 .px-6{
   padding-left: 1.5rem;
