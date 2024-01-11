@@ -7,7 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Log;
 class AuthenticatedSessionController extends Controller
 {
     /**
@@ -15,12 +15,17 @@ class AuthenticatedSessionController extends Controller
      */
     public function getLoginInfo()
     {
-        $loginInfo = [
-            'message' => 'This is the login information',
-            // Thêm thông tin khác cần thiết cho trang đăng nhập
-        ];
-
-        return response()->json($loginInfo);
+        $message = urlencode('Please log in to verify your email.');
+        $redirectUrl = "http://localhost:3000/login?message=$message";
+        Log::debug('Verification URL: chưa verify');
+        echo "<script>
+            setTimeout(function() {
+                alert('Please login and click once again on the email address link you provided during registration to verify your email.');
+                window.location.href = '$redirectUrl';
+            }, 3000); // 5 seconds delay
+        </script>";
+        
+        exit();
     }
     public function store(LoginRequest $request): Response
     {
