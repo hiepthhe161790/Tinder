@@ -1,0 +1,54 @@
+.containers {
+    display: flex;
+    /* justify-content: space-between; Đảm bảo phần tử con sẽ nằm ở hai bên cùng */
+  }
+
+  .scrollable-content {
+    height: 900px;
+    overflow: auto;
+    scrollbar-width: none; /* Ẩn thanh cuộn trên Firefox */
+    -ms-overflow-style: none; /* Ẩn thanh cuộn trên Edge và IE */
+}
+
+.scrollable-content::-webkit-scrollbar {
+    width: 0; /* Ẩn thanh cuộn trên Chrome, Safari, và Opera */
+}
+
+.scrollable-content {
+    -webkit-overflow-scrolling: touch; /* Cho phép cuộn mượt trên các thiết bị cảm ứng */
+}
+
+
+/* Optional: Thiết lập các phần tử con */
+.profile-section, .password-section {
+  margin-bottom: 20px;
+}
+.like{
+  margin: 0px auto;
+
+}
+
+.message-container {
+
+  display: flex;
+}
+.message-close {
+  position: relative;
+
+}
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  padding: 1px;
+  cursor: pointer;
+  z-index: 1; /* Đảm bảo nút "x" được hiển thị trên phần tử Message */
+  top: -5px
+}
+
+.close-button span {
+  font-size: 20px;
+  color: #000; /* Màu sắc của biểu tượng "x" */
+}

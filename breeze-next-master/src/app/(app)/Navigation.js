@@ -1,31 +1,24 @@
-import ApplicationLogo from '@/components/ApplicationLogo'
-import Dropdown from '@/components/Dropdown'
+import ApplicationLogo from '../../components/ApplicationLogo'
+import Dropdown from '../../components/Dropdown'
 import Link from 'next/link'
-import NavLink from '@/components/NavLink'
+import NavLink from '../../components/NavLink'
 import ResponsiveNavLink, {
     ResponsiveNavButton,
-} from '@/components/ResponsiveNavLink'
-import { DropdownButton } from '@/components/DropdownLink'
-import { useAuth } from '@/hooks/auth'
+} from '../../components/ResponsiveNavLink'
+import { DropdownButton } from '../../components/DropdownLink'
+import { useAuth } from '../../hooks/auth'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import React, { useEffect } from 'react';
+
 const Navigation = ({ user }) => {
     const router = useRouter()
 
     const { logout } = useAuth()
 
     const [open, setOpen] = useState(false)
-    const [showVerificationPopup, setShowVerificationPopup] = useState(false); // State để hiển thị pop-up
 
-    // Kiểm tra nếu email_verified_at là null thì hiển thị pop-up
-    useEffect(() => {
-        if (user?.email_verified_at === null) {
-            setShowVerificationPopup(true);
-        } else {
-            setShowVerificationPopup(false);
-        }
-    }, [user?.email_verified_at]);
+    const profile = () => {router.push('/profile');};
+
     return (
         <nav className="bg-white border-b border-gray-100">
             {/* Primary Navigation Menu */}
@@ -75,6 +68,9 @@ const Navigation = ({ user }) => {
                             {/* Authentication */}
                             <DropdownButton onClick={logout}>
                                 Logout
+                            </DropdownButton>
+                            <DropdownButton onClick={profile}>
+                                Profile
                             </DropdownButton>
                         </Dropdown>
                     </div>
@@ -158,29 +154,6 @@ const Navigation = ({ user }) => {
                                 Logout
                             </ResponsiveNavButton>
                         </div>
-                    </div>
-                </div>
-            )}
-              {showVerificationPopup && (
-                <div className="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75">
-                    <div className="bg-white p-4 rounded-md">
-                        <p>
-                            Bạn cần xác minh email để tiếp tục. 
-                            {/* Bạn có thể thêm nút hoặc link để gửi lại email xác minh */}
-                        </p>
-                        <Link
-                        href="/verify-email"
-                        className="text-sm text-gray-700 underline"
-                    >
-                        Verify email
-                    </Link>
-                    <div className="mt-3 space-y-1">
-                            {/* Authentication */}
-                            <ResponsiveNavButton onClick={logout}>
-                                Logout
-                            </ResponsiveNavButton>
-                        </div>
-                        {/* Thêm nút hoặc link để gửi lại email xác minh */}
                     </div>
                 </div>
             )}

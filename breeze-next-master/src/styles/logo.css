@@ -1,0 +1,21 @@
+/* logo.css */
+
+.logo-container {
+    position: absolute;
+    top: 20px; /* Điều chỉnh khoảng cách từ top */
+    left: 20px; /* Điều chỉnh khoảng cách từ left */
+  }
+  
+  .logo-container img {
+    width: 100px; /* Định dạng kích thước của hình ảnh */
+    height: auto; /* Cho phép hình ảnh tự điều chỉnh chiều cao dựa trên chiều rộng */
+  }
+  .logo-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 80px; /* Điều chỉnh khoảng cách từ logo */
+    font-size: 50px; /* Kích thước font */
+    font-weight: bold; /* Độ đậm của font */
+    color: #fff; /* Màu chữ */
+  }

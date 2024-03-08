@@ -1,0 +1,107 @@
+.frame {
+  /* display: flex;
+  justify-content: center; */
+  align-items: center;
+  height: auto;
+
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 10px; /* Khoảng cách giữa các thẻ */
+  transition: transform 0.3s ease; /* Áp dụng hiệu ứng chuyển tiếp cho thuộc tính transform */
+
+}
+/* Di chuyển thẻ lên trên khi di chuột qua 
+/* .card:hover {
+  transform: translateY(-5px);
+} */
+.card > div {
+  margin-bottom: 10px;
+}
+
+.card img {
+  border-radius: 4px;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icons img {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.icons img:hover {
+  opacity: 0.8;
+  transform: translateY(-5px); /* Di chuyển thẻ lên trên khi di chuột qua */
+}
+
+button {
+  /* background-color: #007bff; */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* button:hover {
+  background-color: #0056b3;
+} */
+
+/* Dots của Slider */
+.slick-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slick-dots li {
+  margin: 0 5px;
+}
+
+.slick-dots li button {
+  /* font-size: 12px;
+  width: 10px;
+  height: 10px; */
+  border-radius: 50%;
+  /* border: none;
+  background-color: #bbb;
+  cursor: pointer; */
+}
+
+.slick-dots li.slick-active button {
+  background-color: #f1f5f9;
+}
+.slick-prev:before {
+  color: black !important;
+}
+.slick-next:before {
+  color: black !important;
+}
+
+.dislike-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8); /* Màu nền */
+  padding: 5px 10px; /* Khoảng cách với nội dung */
+  border-radius: 5px; /* Bo tròn góc */
+  z-index: 999; /* Đảm bảo hiển thị trên các phần tử khác */
+}
+.big-bold-text {
+  font-weight: bold; /* Đậm */
+  font-size: 18px; /* Kích thước font */
+}

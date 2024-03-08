@@ -1,9 +1,9 @@
 'use client'
 
-import Button from '@/components/Button'
-import { useAuth } from '@/hooks/auth'
+import Button from '../../../components/Button'
+import { useAuth } from '../../../hooks/auth'
 import { useState } from 'react'
-
+import Link from 'next/link'
 const Page = () => {
     const { logout, resendEmailVerification } = useAuth({
         middleware: 'auth',
@@ -32,7 +32,11 @@ const Page = () => {
                 <Button onClick={() => resendEmailVerification({ setStatus })}>
                     Resend Verification Email
                 </Button>
-
+                <Link
+                        href="/recs"
+                        className="underline text-sm text-gray-600 hover:text-gray-900">
+                       Profile
+                    </Link>
                 <button
                     type="button"
                     className="underline text-sm text-gray-600 hover:text-gray-900"

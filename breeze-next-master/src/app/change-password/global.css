@@ -1,0 +1,61 @@
+/* CSS for form */
+.change-password-form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* CSS for input fields */
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* CSS for error messages */
+.InputError {
+    color: red;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+/* CSS for button */
+Button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+Button:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+/* CSS for success message */
+.success-message {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #4CAF50; /* Green */
+}
+
+/* Add margin and padding for each element */
+div {
+    margin-bottom: 10px;
+}
+
+/* CSS for margin and padding between elements */
+div > * {
+    margin-bottom: 10px;
+}
+.big-bold-text {
+    font-weight: bold; /* Đậm */
+    font-size: 18px; /* Kích thước font */
+  }

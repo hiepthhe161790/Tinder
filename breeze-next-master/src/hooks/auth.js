@@ -1,5 +1,5 @@
 import useSWR from 'swr'
-import axios from '@/lib/axios'
+import axios from '../lib/axios'
 import { useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 
@@ -21,36 +21,52 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const csrf = () => axios.get('/sanctum/csrf-cookie')
 
     const register = async ({ setErrors, ...props }) => {
-        await csrf()
-
-        setErrors([])
-
-        axios
-            .post('/register', props)
-            .then(() => mutate())
-            .catch(error => {
-                if (error.response.status !== 422) throw error
-
-                setErrors(error.response.data.errors)
-            })
-    }
-
+        try {
+            await csrf();
+    
+            setErrors([]);
+    
+            await axios.post('/register', props)
+                .then(() => mutate());
+        } catch (error) {
+            if (error.response && error.response.status === 429) {
+                console.log('Too many requests! Please try again later.');
+            }  else if(error.response && error.response.status === 404 ){
+                console.log('404 lỗi rồi! Please try again later.');
+            } else if (error.response && error.response.status !== 422) {
+                throw error;
+            } else {
+                setErrors(error.response.data.errors);
+            }
+        }
+    };
+    
     const login = async ({ setErrors, setStatus, ...props }) => {
-        await csrf()
-
-        setErrors([])
-        setStatus(null)
-
-        axios
-            .post('/login', props)
-            .then(() => mutate())
-            .catch(error => {
-                if (error.response.status !== 422) throw error
-
-                setErrors(error.response.data.errors)
-            })
-    }
-
+        try {
+            await csrf();
+    
+            setErrors([]);
+            setStatus(null);
+    
+            await axios.post('/login', props)
+                .then(() => mutate());
+        } catch (error) {
+            if (error.response && error.response.status === 429) {
+                console.log('Too many requests! Please try again later.');  
+            }else if(error.response && error.response.status === 403 ){
+                console.log('403 Sai tai khoan! Please try again later.');   
+            }  else if(error.response && error.response.status === 404 ){
+                console.log('404 lỗi rồi! Please try again later.');
+            } else if (error.response && error.response.status !== 422) {
+                throw error;
+            } else {
+                setErrors(error.response?.data.errors);
+            }
+        }
+    };
+    
+    
+    
     const forgotPassword = async ({ setErrors, setStatus, email }) => {
         await csrf()
 
@@ -108,6 +124,9 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         )
             router.push(redirectIfAuthenticated)
         if (middleware === 'auth' && error) logout()
+        if (middleware === 'auth' && user && !user.email_verified_at) {
+            router.push('/verify-email');
+        }
     }, [user, error])
 
     return {

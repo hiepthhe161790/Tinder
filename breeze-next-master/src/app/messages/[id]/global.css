@@ -1,0 +1,55 @@
+/* Message.css */
+
+/* Phần tử chính của cuộc trò chuyện */
+.container {
+    width: fit-content;
+    height: auto;
+    margin: auto;
+}
+
+/* Danh sách tin nhắn */
+.chat-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-list li {
+    margin-bottom: 10px;
+}
+
+/* Tin nhắn của người gửi */
+.chat-list li.sent-message {
+    align-self: flex-end;
+    background-color: #0084ff;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Tin nhắn của người nhận */
+.chat-list li.received-message {
+    align-self: flex-start;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Giao diện của ô nhập tin nhắn */
+.message-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-form textarea {
+    resize: none;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+
+.header-message{
+padding-right: 20px;
+}

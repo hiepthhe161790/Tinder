@@ -1,12 +1,14 @@
 'use client'
 
-import Button from '@/components/Button'
-import Input from '@/components/Input'
-import InputError from '@/components/InputError'
-import Label from '@/components/Label'
+import Button from '../../../components/Button'
+import Input from '../../../components/Input'
+import InputError from '../../../components/InputError'
+import Label from '../../../components/Label'
 import Link from 'next/link'
-import { useAuth } from '@/hooks/auth'
+import { useAuth } from '../../../hooks/auth'
 import { useState } from 'react'
+
+import LoadingOverlay from 'react-loading-overlay'
 
 const Page = () => {
     const { register } = useAuth({
@@ -19,104 +21,114 @@ const Page = () => {
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
     const [errors, setErrors] = useState([])
+    const [loading, setLoading] = useState(false)
 
-    const submitForm = event => {
+    const submitForm = async event => {
         event.preventDefault()
+        setLoading(true)
 
-        register({
-            name,
-            email,
-            password,
-            password_confirmation: passwordConfirmation,
-            setErrors,
-        })
+      
+            await register({
+                name,
+                email,
+                password,
+                password_confirmation: passwordConfirmation,
+                setErrors,
+              }).finally(() => {
+                   // Chờ 2 giây trước khi kết thúc loading overlay
+            // setTimeout(() => {
+                setLoading(false); // Khi xử lý hoàn thành (thành công hoặc thất bại), set loading thành false
+            // }, 5000); // 2000 milliseconds = 2 gi
+            })
     }
 
     return (
-        <form onSubmit={submitForm}>
-            {/* Name */}
-            <div>
-                <Label htmlFor="name">Name</Label>
+        <LoadingOverlay active={loading} spinner text="Loading...">
+            <form onSubmit={submitForm}>
+                {/* Name */}
+                <div>
+                    <Label htmlFor="name">Name</Label>
 
-                <Input
-                    id="name"
-                    type="text"
-                    value={name}
-                    className="block mt-1 w-full"
-                    onChange={event => setName(event.target.value)}
-                    required
-                    autoFocus
-                />
+                    <Input
+                        id="name"
+                        type="text"
+                        value={name}
+                        className="block mt-1 w-full"
+                        onChange={event => setName(event.target.value)}
+                        required
+                        autoFocus
+                    />
 
-                <InputError messages={errors.name} className="mt-2" />
-            </div>
+                    <InputError messages={errors.name} className="mt-2" />
+                </div>
 
-            {/* Email Address */}
-            <div className="mt-4">
-                <Label htmlFor="email">Email</Label>
+                {/* Email Address */}
+                <div className="mt-4">
+                    <Label htmlFor="email">Email</Label>
 
-                <Input
-                    id="email"
-                    type="email"
-                    value={email}
-                    className="block mt-1 w-full"
-                    onChange={event => setEmail(event.target.value)}
-                    required
-                />
+                    <Input
+                        id="email"
+                        type="email"
+                        value={email}
+                        className="block mt-1 w-full"
+                        onChange={event => setEmail(event.target.value)}
+                        required
+                    />
 
-                <InputError messages={errors.email} className="mt-2" />
-            </div>
+                    <InputError messages={errors.email} className="mt-2" />
+                </div>
 
-            {/* Password */}
-            <div className="mt-4">
-                <Label htmlFor="password">Password</Label>
+                {/* Password */}
+                <div className="mt-4">
+                    <Label htmlFor="password">Password</Label>
 
-                <Input
-                    id="password"
-                    type="password"
-                    value={password}
-                    className="block mt-1 w-full"
-                    onChange={event => setPassword(event.target.value)}
-                    required
-                    autoComplete="new-password"
-                />
+                    <Input
+                        id="password"
+                        type="password"
+                        value={password}
+                        className="block mt-1 w-full"
+                        onChange={event => setPassword(event.target.value)}
+                        required
+                        autoComplete="new-password"
+                    />
 
-                <InputError messages={errors.password} className="mt-2" />
-            </div>
+                    <InputError messages={errors.password} className="mt-2" />
+                </div>
 
-            {/* Confirm Password */}
-            <div className="mt-4">
-                <Label htmlFor="passwordConfirmation">
-                    Confirm Password
-                </Label>
+                {/* Confirm Password */}
+                <div className="mt-4">
+                    <Label htmlFor="passwordConfirmation">
+                        Confirm Password
+                    </Label>
 
-                <Input
-                    id="passwordConfirmation"
-                    type="password"
-                    value={passwordConfirmation}
-                    className="block mt-1 w-full"
-                    onChange={event =>
-                        setPasswordConfirmation(event.target.value)
-                    }
-                    required
-                />
+                    <Input
+                        id="passwordConfirmation"
+                        type="password"
+                        value={passwordConfirmation}
+                        className="block mt-1 w-full"
+                        onChange={event =>
+                            setPasswordConfirmation(event.target.value)
+                        }
+                        required
+                    />
 
-                <InputError
-                    messages={errors.password_confirmation}
-                    className="mt-2"
-                />
-            </div>
+                    <InputError
+                        messages={errors.password_confirmation}
+                        className="mt-2"
+                    />
+                </div>
 
-            <div className="flex items-center justify-end mt-4">
-                <Link
-                    href="/login"
-                    className="underline text-sm text-gray-600 hover:text-gray-900">
-                    Already registered?
-                </Link>
+                <div className="flex items-center justify-end mt-4">
+                    <Link
+                        href="/login"
+                        className="underline text-sm text-gray-600 hover:text-gray-900">
+                        Already registered?
+                    </Link>
 
-                <Button className="ml-4">Register</Button>
-            </div>
-        </form>
+                    <Button className="ml-4">Register</Button>
+                </div>
+            </form>
+        </LoadingOverlay>
     )
 }
 

@@ -1,0 +1,102 @@
+/* ProfileForm.css */
+
+/* Container cho form */
+.profile-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  /* Phần tử của form */
+  .form-section {
+    margin-bottom: 20px;
+  }
+  
+  /* Input fields */
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* File input */
+  input[type="file"] {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Button */
+  /* button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  } */
+  
+  /* Image preview */
+  .image-preview {
+    max-width: 300px;
+    margin-top: 10px;
+  }
+  
+  /* Status messages */
+  .status-message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  /* Input error messages */
+  .input-error {
+    color: #721c24;
+  }
+  .modal {
+    /* CSS cho modal */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .modal label {
+    /* CSS cho nhãn trong modal */
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .modal input[type="file"] {
+    /* CSS cho input file trong modal */
+    margin-bottom: 10px;
+  }
+  
+  .modal button {
+    /* CSS cho nút trong modal */
+    margin-right: 10px;
+  }

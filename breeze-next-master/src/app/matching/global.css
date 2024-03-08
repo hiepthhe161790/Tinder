@@ -1,0 +1,38 @@
+.matched-user {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #f9f9f9; /* Thêm màu nền */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng shadow */
+  }
+  
+  .matched-user p {
+    margin: 8px 0;
+  }
+  
+  .matched-user a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease; /* Thêm hiệu ứng mềm dần khi hover */
+  }
+  
+  .matched-user a:hover {
+    color: #555; /* Thay đổi màu chữ khi hover */
+    text-decoration: underline; /* Thêm gạch chân khi hover */
+  }
+  
+  .matched-user > div {
+    padding: 12px; /* Thêm padding cho mỗi phần tử con */
+    border-bottom: 1px solid #ddd; /* Thêm đường viền giữa các mục */
+  }
+  
+  .matched-user > div:last-child {
+    border-bottom: none; /* Loại bỏ đường viền dưới cùng */
+  }
+  
+  .matched-user > div:hover {
+    background-color: #f0f0f0; /* Thêm màu nền khi hover */
+    transition: background-color 0.3s ease; /* Thêm hiệu ứng mềm dần khi hover */
+  }
+  

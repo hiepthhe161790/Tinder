@@ -1,4 +1,4 @@
-import '@/app/global.css'
+import './global.css'
 
 export const metadata = {
     title: 'Laravel',

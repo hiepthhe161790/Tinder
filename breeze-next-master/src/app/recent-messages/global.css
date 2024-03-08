@@ -1,0 +1,36 @@
+/* global.css */
+
+/* Style for the container holding recent messages */
+.messenger-container {
+    margin: 20px;
+}
+
+/* Style for the header */
+.messenger-header {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Style for the message list */
+.message-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Style for each message item */
+.message-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Style for the user name */
+.user-names {
+    font-weight: bold;
+}
+
+/* Style for the last message */
+.last-message {
+    color: #666;
+}

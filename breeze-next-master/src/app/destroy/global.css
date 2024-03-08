@@ -1,0 +1,81 @@
+/* CSS for form */
+.change-password-form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* CSS for input fields */
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* CSS for error messages */
+.InputError {
+    color: red;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+/* CSS for button */
+Button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+Button:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+/* CSS for success message */
+.success-message {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #4CAF50; /* Green */
+}
+
+/* Add margin and padding for each element */
+div {
+    margin-bottom: 10px;
+}
+
+/* CSS for margin and padding between elements */
+div > * {
+    margin-bottom: 10px;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
