@@ -14,6 +14,8 @@ use App\Http\Controllers\ProfileControllers;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\SubscriptionPlanController;
 Route::middleware(['web'])->group(function () {
 Route::post('/register', [RegisteredUserController::class, 'store'])
                 ->middleware(['guest', 'throttle:6,1'])
@@ -22,14 +24,18 @@ Route::post('/register', [RegisteredUserController::class, 'store'])
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
                 ->middleware(['guest', 'throttle:6,1'])
                 ->name('login');
+Route::get('/login', [AuthenticatedSessionController::class, 'create'])
+                ->middleware('guest')
+                ->name('login');               
 // Route::get('/login', [AuthenticatedSessionController::class, 'getLoginInfo'])
 //                 ->middleware('guest')
 //                 ->name('login');
-Route::get('/login', function (Request $request) {
-    // Xử lý logic khi nhận yêu cầu GET login từ Next.js
-    // Trả về đường dẫn cần chuyển hướng trong mã JSON
-    return response(null, 302)->header('Location', 'http://localhost:3000/login');
-});
+// Route::get('/login', function (Request $request) {
+//     // Xử lý logic khi nhận yêu cầu GET login từ Next.js
+//     // Trả về đường dẫn cần chuyển hướng trong mã JSON
+//     return response(null, 302)->header('Location', 'http://localhost:3000/login');
+// });
+
 Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])
                 ->middleware('guest')
                 ->name('password.email');
@@ -62,6 +68,17 @@ Route::middleware('auth')->group(function () {
               
                 });
 
+
+                Route::get('/subscription_plans', [SubscriptionPlanController::class, 'index']);
+                Route::get('/subscription_plans/create', [SubscriptionPlanController::class, 'create']);
+                Route::post('/subscription_plans', [SubscriptionPlanController::class, 'store']);
+                Route::get('/subscription_plans/{id}', [SubscriptionPlanController::class, 'show']);
+                Route::get('/subscription_plans/{id}/edit', [SubscriptionPlanController::class, 'edit']);
+                Route::put('/subscription_plans/{id}', [SubscriptionPlanController::class, 'update']);
+                Route::delete('/subscription_plans/{id}', [SubscriptionPlanController::class, 'destroy']);
+                
+                Route::post('/thanks', [PaymentController::class, 'handleCallback'])->name('vnpay.handleCallback');
+                Route::post('/vnpay_payment', [PaymentController::class, 'vnpay_payment'])->name('vnpay.vnpay_payment');
                 Route::get('/profiles', [ProfileControllers::class, 'show']) ->middleware(['auth'])->name('profiles.show');
                 Route::post('/profiles', [ProfileControllers::class, 'store']) ->middleware(['auth'])->name('profiles.store');
                 Route::put('/profiles', [ProfileControllers::class, 'update']) ->middleware(['auth'])->name('profiles.update');

@@ -1,0 +1,53 @@
+.payment-container {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các phần tử con trên hàng mới khi không đủ không gian */
+}
+
+.payment-details {
+    flex: 1;
+    margin-right: 20px; /* Khoảng cách giữa các phần */
+    background-color: #f9f9f9; /* Màu nền để phân biệt giữa các phần */
+    border-radius: 8px; /* Bo tròn viền */
+    padding: 20px; /* Khoảng cách bên trong phần */
+    cursor: pointer; /* Con trỏ khi di chuột vào */
+    transition: all 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà */
+}
+
+.payment-details:hover {
+    transform: translateY(-5px); /* Di chuyển phần lên khi di chuột vào */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+
+.plan-details {
+    display: flex;
+    justify-content: space-between; /* Các phần tử con trong plan-details sẽ căn giữa và căn ra xa nhau */
+    margin-top: 20px;
+}
+
+.plan-details p {
+    margin: 0; /* Loại bỏ margin mặc định của các phần tử p */
+}
+
+.left-column,
+.right-column {
+    flex: 1; /* Các cột sẽ chiếm phần bằng nhau */
+}
+
+.left-column p,
+.right-column p {
+    margin-bottom: 10px; /* Khoảng cách giữa các mục */
+}
+
+.button {
+    background-color: #007bff; /* Màu nền */
+    color: #fff; /* Màu chữ */
+    border: none; /* Loại bỏ viền */
+    border-radius: 5px; /* Bo tròn viền */
+    padding: 10px 20px; /* Khoảng cách bên trong */
+    cursor: pointer; /* Con trỏ khi di chuột vào */
+    transition: background-color 0.3s ease; /* Hiệu ứng mượt mà khi hover */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+}

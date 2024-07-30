@@ -44,11 +44,11 @@ const ChangePassword = () => {
         // Hiển thị trạng thái "Loading" trong quá trình lấy dữ liệu
         return <div>Loading...</div>;
     }
-console.log(status)
-console.log(errors)
-console.log(errors.current_password)
-console.log(errors.password)
-console.log(errors.password_confirmation)
+// console.log(status)
+// console.log(errors)
+// console.log(errors.current_password)
+// console.log(errors.password)
+// console.log(errors.password_confirmation)
 
     return (
         <div className="change-password-form">

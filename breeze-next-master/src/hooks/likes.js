@@ -25,8 +25,10 @@ const createLike = async ({ setErrors, setStatus, ...props }) => {
     axios
         .post('/likes', props)
         .then(response => {
-            
-            setStatus(response.data.status)})
+            const likedUser = response.data.liked_user; // Lấy thông tin về người được "like" từ phản hồi
+            setStatus(response.data.status);
+            // console.log("Like User vua code xong: ",likedUser); // In ra thông tin về người được "like"
+        })
         .catch(error => {
             if (error.response.status !== 422) throw error
 
@@ -35,13 +37,13 @@ const createLike = async ({ setErrors, setStatus, ...props }) => {
 }
 
 
+
 const showLikes = async (props) => {
     await csrf();
 
     axios
         .get('/likes', { params: props })
         .then(response => {
-            console.log(response);
         })
         .catch(error => {
             console.error(error);
@@ -56,7 +58,6 @@ const userDetail = async ({ setErrors, setStatus, ...props }) => {
     axios
         .get('/users/${props.id}`', props)
         .then(response => {
-            console.log(response)
             setStatus(response.data.status)})
         .catch(error => {
             if (error.response.status !== 422) throw error

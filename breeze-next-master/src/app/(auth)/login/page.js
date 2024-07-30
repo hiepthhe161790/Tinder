@@ -45,10 +45,10 @@ const Login = () => {
             setStatus,
         }).finally(() => {
             // Chờ 2 giây trước khi kết thúc loading overlay
-     // setTimeout(() => {
-         setLoading(false); // Khi xử lý hoàn thành (thành công hoặc thất bại), set loading thành false
-     // }, 5000); // 2000 milliseconds = 2 gi
-     })
+            // setTimeout(() => {
+            setLoading(false); // Khi xử lý hoàn thành (thành công hoặc thất bại), set loading thành false
+            // }, 5000); // 2000 milliseconds = 2 gi
+        })
     }
 
     return (
@@ -74,7 +74,7 @@ const Login = () => {
                             autoFocus
                         />
 
-{errors && errors.email && <InputError messages={errors.email} className="mt-2" />}
+                        {errors && errors.email && <InputError messages={errors.email} className="mt-2" />}
                     </div>
 
                     {/* Password */}
@@ -91,7 +91,7 @@ const Login = () => {
                             autoComplete="current-password"
                         />
 
-{errors && errors.password && <InputError messages={errors.password} className="mt-2" />}
+                        {errors && errors.password && <InputError messages={errors.password} className="mt-2" />}
                     </div>
 
                     {/* Remember Me */}

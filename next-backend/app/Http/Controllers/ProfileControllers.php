@@ -151,7 +151,7 @@ class ProfileControllers extends Controller
             $user = auth()->user();
     
             $request->validate([
-                'image_paths' => 'required',
+
                 'age' => 'required|integer|min:0|max:150',
                 'gender' => 'required|boolean',
                 'location' => 'required|max:100',
@@ -160,7 +160,11 @@ class ProfileControllers extends Controller
             // Lấy danh sách các đường dẫn ảnh cũ của người dùng
             // Lấy danh sách các hình ảnh cũ liên quan đến người dùng hiện tại
         $oldImages = Profile::where('user_id', $user->id)->pluck('image_path')->toArray();
-
+  // Kiểm tra nếu không có ảnh mới được cung cấp
+  if (!$request->has('image_paths') || !is_array($request->input('image_paths')) || count($request->input('image_paths')) === 0) {
+    // Không có ảnh mới được cung cấp, giữ nguyên ảnh cũ
+    $imagePaths = $oldImages;
+} else {
             $imagePaths = [];
             foreach ($request->input('image_paths') as $base64Image) {
                 $mime = explode(';', $base64Image)[0];
@@ -194,7 +198,7 @@ class ProfileControllers extends Controller
                  }
                }
             }
-
+        }
             $profileData = [
                 'user_id' => $user->id,
                 'image_path' => implode(',', $imagePaths), // Sử dụng implode để ngăn cách các đường dẫn ảnh bằng dấu phẩy

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Message;
 use App\Models\Matches;
 use App\Models\User;
-
+use App\Events\ChatMessage;
 
 class MessageController extends Controller
 {
@@ -91,7 +91,36 @@ class MessageController extends Controller
         ]);
     }
 
-    public function sendMessage(Request $request): JsonResponse
+//     public function sendMessage(Request $request): JsonResponse
+// {
+//     $request->validate([
+//         'receiver_id' => 'required|exists:users,id',
+//         'content' => 'required|string',
+//     ]);
+
+//     $loggedInUser = Auth::user();
+
+//     $match = Matches::where(function ($query) use ($loggedInUser, $request) {
+//         $query->where('user1_id', $loggedInUser->id)->where('user2_id', $request->receiver_id);
+//     })->orWhere(function ($query) use ($loggedInUser, $request) {
+//         $query->where('user1_id', $request->receiver_id)->where('user2_id', $loggedInUser->id);
+//     })->first();
+
+//     if (!$match) {
+//         return response()->json(['status' => 'error']);
+//     }
+
+//     Message::create([
+//         'match_id' => $match->id, // Thêm match_id vào dữ liệu tạo
+//         'sender_id' => $loggedInUser->id,
+//         'receiver_id' => $request->receiver_id,
+//         'content' => $request->content,
+//     ]);
+//     event(new ChatMessage($message->match_id, $message->sender_id, $message->receiver_id, $message->content));
+//     return response()->json(['status' => 'success']);
+// }
+
+public function sendMessage(Request $request): JsonResponse
 {
     $request->validate([
         'receiver_id' => 'required|exists:users,id',
@@ -110,15 +139,19 @@ class MessageController extends Controller
         return response()->json(['status' => 'error']);
     }
 
-    Message::create([
-        'match_id' => $match->id, // Thêm match_id vào dữ liệu tạo
+    $message = Message::create([
+        'match_id' => $match->id,
         'sender_id' => $loggedInUser->id,
         'receiver_id' => $request->receiver_id,
         'content' => $request->content,
     ]);
 
+    // Sử dụng biến $message sau khi tạo tin nhắn thành công
+    event(new ChatMessage($message->match_id, $message->sender_id, $message->receiver_id, $message->content));
+
     return response()->json(['status' => 'success']);
 }
+
 
     public function showRecentMessages(Request $request): JsonResponse
 {

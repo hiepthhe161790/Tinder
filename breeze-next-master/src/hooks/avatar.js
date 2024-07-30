@@ -34,7 +34,9 @@ export const userAvatar = ({ middleware, redirectIfAuthenticated, id: propId } =
           setErrors(error.response.data.errors);
         }
       };
-
+    //   useEffect(() => {
+      
+    // }, [first_image_path, error])
     return {
         first_image_path,
         error,

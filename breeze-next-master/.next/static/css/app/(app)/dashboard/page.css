@@ -1,0 +1,774 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/recent-messages/global.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+/* global.css */
+
+/* Style for the container holding recent messages */
+.messenger-container {
+    margin: 20px;
+}
+
+/* Style for the header */
+.messenger-header {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Style for the message list */
+.message-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Style for each message item */
+.message-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Style for the user name */
+.user-names {
+    font-weight: bold;
+}
+
+/* Style for the last message */
+.last-message {
+    color: #666;
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/messages/[id]/global.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+/* Message.css */
+
+/* Phần tử chính của cuộc trò chuyện */
+.container {
+    width: -moz-fit-content;
+    width: fit-content;
+    height: auto;
+    margin: auto;
+}
+
+/* Danh sách tin nhắn */
+.chat-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-list li {
+    margin-bottom: 10px;
+}
+
+/* Tin nhắn của người gửi */
+.chat-list li.sent-message {
+    align-self: flex-end;
+    background-color: #0084ff;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Tin nhắn của người nhận */
+.chat-list li.received-message {
+    align-self: flex-start;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Giao diện của ô nhập tin nhắn */
+.message-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-form textarea {
+    resize: none;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+
+.header-message{
+padding-right: 20px;
+}
+
+.chat-list {
+    max-height: 70vh; /* Đặt chiều cao tối đa cho danh sách tin nhắn */
+    overflow-y: auto; /* Cho phép cuộn nếu nội dung vượt quá kích thước danh sách */
+    padding: 0 10px; /* Thêm lề để tránh việc tin nhắn đụng lề */
+}
+
+/* Tùy chỉnh các tin nhắn */
+.chat-list li {
+    margin-bottom: 10px; /* Tạo khoảng cách giữa các tin nhắn */
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/styles/tinder.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+.header {
+    background: linear-gradient(to bottom, rgba(254, 0, 102, 0.8), rgb(255 206 46 / 80%));
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav ul li {
+    margin-right: 20px;
+}
+
+.nav ul li button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.nav ul li button:hover,
+.nav ul li button.active {
+    color: #ff6b6b;
+}
+.container-tinder{
+    width: -moz-fit-content;
+    width: fit-content;
+  
+}
+
+
+.user-profile {
+    display: flex; /* Sử dụng flexbox để các phần tử con được xếp cạnh nhau */
+    align-items: center; /* Căn chỉnh các phần tử con theo chiều dọc */
+  }
+/* Rounded image */
+.rounded-image {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Bold user name */
+  .user-name {
+    font-weight: bold; /* Làm cho tên người dùng đậm hơn */
+    padding-left: 10px;
+    color: aliceblue;
+  }
+  .likes{
+    margin: 0px auto;
+  }
+
+
+  
+/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/users/global.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************/
+.frame {
+  /* display: flex;
+  justify-content: center; */
+  align-items: center;
+  height: auto;
+
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 10px; /* Khoảng cách giữa các thẻ */
+  transition: transform 0.3s ease; /* Áp dụng hiệu ứng chuyển tiếp cho thuộc tính transform */
+
+}
+/* Di chuyển thẻ lên trên khi di chuột qua 
+/* .card:hover {
+  transform: translateY(-5px);
+} */
+.card > div {
+  margin-bottom: 10px;
+}
+
+.card img {
+  border-radius: 4px;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icons img {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.icons img:hover {
+  opacity: 0.8;
+  transform: translateY(-5px); /* Di chuyển thẻ lên trên khi di chuột qua */
+}
+
+button {
+  /* background-color: #007bff; */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* button:hover {
+  background-color: #0056b3;
+} */
+
+/* Dots của Slider */
+.slick-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slick-dots li {
+  margin: 0 5px;
+}
+
+.slick-dots li button {
+  /* font-size: 12px;
+  width: 10px;
+  height: 10px; */
+  border-radius: 50%;
+  /* border: none;
+  background-color: #bbb;
+  cursor: pointer; */
+}
+
+.slick-dots li.slick-active button {
+  background-color: #f1f5f9;
+}
+.slick-prev:before {
+  color: black !important;
+}
+.slick-next:before {
+  color: black !important;
+}
+
+.dislike-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8); /* Màu nền */
+  padding: 5px 10px; /* Khoảng cách với nội dung */
+  border-radius: 5px; /* Bo tròn góc */
+  z-index: 999; /* Đảm bảo hiển thị trên các phần tử khác */
+}
+.big-bold-text {
+  font-weight: bold; /* Đậm */
+  font-size: 18px; /* Kích thước font */
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./node_modules/slick-carousel/slick/slick.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+/* Slider */
+.slick-slider
+{
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./node_modules/slick-carousel/slick/slick-theme.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+@charset 'UTF-8';
+/* Slider */
+.slick-loading .slick-list
+{
+    background: #fff url(/_next/static/media/ajax-loader.0b80f665.gif) center center no-repeat;
+}
+
+/* Icons */
+@font-face
+{
+    font-family: 'slick';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url(/_next/static/media/slick.25572f22.eot);
+    src: url(/_next/static/media/slick.25572f22.eot?#iefix) format('embedded-opentype'), url(/_next/static/media/slick.653a4cbb.woff) format('woff'), url(/_next/static/media/slick.6aa1ee46.ttf) format('truetype'), url(/_next/static/media/slick.f895cfdf.svg#slick) format('svg');
+}
+/* Arrows */
+.slick-prev,
+.slick-next
+{
+    font-size: 0;
+    line-height: 0;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    transform: translate(0, -50%);
+
+    cursor: pointer;
+
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus
+{
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before
+{
+    opacity: 1;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before
+{
+    opacity: .25;
+}
+
+.slick-prev:before,
+.slick-next:before
+{
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+
+    opacity: .75;
+    color: white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev
+{
+    left: -25px;
+}
+[dir='rtl'] .slick-prev
+{
+    right: -25px;
+    left: auto;
+}
+.slick-prev:before
+{
+    content: '←';
+}
+[dir='rtl'] .slick-prev:before
+{
+    content: '→';
+}
+
+.slick-next
+{
+    right: -25px;
+}
+[dir='rtl'] .slick-next
+{
+    right: auto;
+    left: -25px;
+}
+.slick-next:before
+{
+    content: '→';
+}
+[dir='rtl'] .slick-next:before
+{
+    content: '←';
+}
+
+/* Dots */
+.slick-dotted.slick-slider
+{
+    margin-bottom: 30px;
+}
+
+.slick-dots
+{
+    position: absolute;
+    bottom: -25px;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+.slick-dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.slick-dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus
+{
+    outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before
+{
+    opacity: 1;
+}
+.slick-dots li button:before
+{
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: '•';
+    text-align: center;
+
+    opacity: .25;
+    color: black;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before
+{
+    opacity: .75;
+    color: black;
+}
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/styles/dashboard.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************/
+.containers {
+    display: flex;
+    /* justify-content: space-between; Đảm bảo phần tử con sẽ nằm ở hai bên cùng */
+  }
+
+  .scrollable-content {
+    height: 900px;
+    overflow: auto;
+    scrollbar-width: none; /* Ẩn thanh cuộn trên Firefox */
+    -ms-overflow-style: none; /* Ẩn thanh cuộn trên Edge và IE */
+}
+
+.scrollable-content::-webkit-scrollbar {
+    width: 0; /* Ẩn thanh cuộn trên Chrome, Safari, và Opera */
+}
+
+.scrollable-content {
+    -webkit-overflow-scrolling: touch; /* Cho phép cuộn mượt trên các thiết bị cảm ứng */
+}
+
+
+/* Optional: Thiết lập các phần tử con */
+.profile-section, .password-section {
+  margin-bottom: 20px;
+}
+.like{
+  margin: 0px auto;
+
+}
+
+.message-container {
+
+  display: flex;
+}
+.message-close {
+  position: relative;
+
+}
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  padding: 1px;
+  cursor: pointer;
+  z-index: 1; /* Đảm bảo nút "x" được hiển thị trên phần tử Message */
+  top: -5px
+}
+
+.close-button span {
+  font-size: 20px;
+  color: #000; /* Màu sắc của biểu tượng "x" */
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/styles/plan.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+.payment-container {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các phần tử con trên hàng mới khi không đủ không gian */
+}
+
+.payment-details {
+    flex: 1;
+    margin-right: 20px; /* Khoảng cách giữa các phần */
+    background-color: #f9f9f9; /* Màu nền để phân biệt giữa các phần */
+    border-radius: 8px; /* Bo tròn viền */
+    padding: 20px; /* Khoảng cách bên trong phần */
+    cursor: pointer; /* Con trỏ khi di chuột vào */
+    transition: all 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà */
+}
+
+.payment-details:hover {
+    transform: translateY(-5px); /* Di chuyển phần lên khi di chuột vào */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+
+.plan-details {
+    display: flex;
+    justify-content: space-between; /* Các phần tử con trong plan-details sẽ căn giữa và căn ra xa nhau */
+    margin-top: 20px;
+}
+
+.plan-details p {
+    margin: 0; /* Loại bỏ margin mặc định của các phần tử p */
+}
+
+.left-column,
+.right-column {
+    flex: 1; /* Các cột sẽ chiếm phần bằng nhau */
+}
+
+.left-column p,
+.right-column p {
+    margin-bottom: 10px; /* Khoảng cách giữa các mục */
+}
+
+.button {
+    background-color: #007bff; /* Màu nền */
+    color: #fff; /* Màu chữ */
+    border: none; /* Loại bỏ viền */
+    border-radius: 5px; /* Bo tròn viền */
+    padding: 10px 20px; /* Khoảng cách bên trong */
+    cursor: pointer; /* Con trỏ khi di chuột vào */
+    transition: background-color 0.3s ease; /* Hiệu ứng mượt mà khi hover */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+}
+
+/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/matching/global.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************/
+.matched-user {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #f9f9f9; /* Thêm màu nền */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng shadow */
+  }
+  
+  .matched-user p {
+    margin: 8px 0;
+  }
+  
+  .matched-user a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease; /* Thêm hiệu ứng mềm dần khi hover */
+  }
+  
+  .matched-user a:hover {
+    color: #555; /* Thay đổi màu chữ khi hover */
+    text-decoration: underline; /* Thêm gạch chân khi hover */
+  }
+  
+  .matched-user > div {
+    padding: 12px; /* Thêm padding cho mỗi phần tử con */
+    border-bottom: 1px solid #ddd; /* Thêm đường viền giữa các mục */
+  }
+  
+  .matched-user > div:last-child {
+    border-bottom: none; /* Loại bỏ đường viền dưới cùng */
+  }
+  
+  .matched-user > div:hover {
+    background-color: #f0f0f0; /* Thêm màu nền khi hover */
+    transition: background-color 0.3s ease; /* Thêm hiệu ứng mềm dần khi hover */
+  }
+  

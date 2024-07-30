@@ -100,56 +100,69 @@ class LikeController extends Controller
     }
 
     public function createLike(Request $request): JsonResponse
-{
-    // Kiểm tra xem người dùng đã đăng nhập chưa
-    if (auth()->check()) {
-        // Lấy user_id của người dùng đã đăng nhập
-        $userId = auth()->id();
-        $likedUserId = $request->input('liked_user_id');
-
-        // Kiểm tra xem người dùng đang like chính mình không
-        if ($userId == $likedUserId) {
-            return response()->json(['error' => 'You cannot like yourself.'], 400);
+    {
+        // Kiểm tra xem người dùng đã đăng nhập chưa
+        if (auth()->check()) {
+            // Lấy user_id của người dùng đã đăng nhập
+            $userId = auth()->id();
+            $likedUserId = $request->input('liked_user_id');
+    
+            // Kiểm tra xem người dùng đang like chính mình không
+            if ($userId == $likedUserId) {
+                return response()->json(['error' => 'You cannot like yourself.'], 400);
+            }
+    
+            // Kiểm tra xem đã có một like từ người dùng khác và đảo ngược không
+            $existingLike = Likes::where('user_id', $likedUserId)
+                ->where('liked_user_id', $userId)
+                ->exists();
+    
+            // Kiểm tra xem đã có một like từ người dùng hiện tại cho người dùng khác không
+            $alreadyLiked = Likes::where('user_id', $userId)
+                ->where('liked_user_id', $likedUserId)
+                ->exists();
+    
+            if ($existingLike && !$alreadyLiked) {
+                // Tạo match
+                Matches::create([
+                    'user1_id' => $userId,
+                    'user2_id' => $likedUserId,
+                ]);
+    
+                // Truy cập thông tin về người dùng thực hiện hành động like
+                $likingUser = User::find($userId);
+    
+                // Truy cập thông tin về người được like
+                $likedUser = User::find($likedUserId);
+    
+                // Trả về một phản hồi JSON cho trang match
+                return response()->json(['status' => 'Match-created-successfully', 'liking_user' => $likingUser, 'liked_user' => $likedUser]);
+            }
+    
+            // Nếu không có match, chỉ tạo like
+            if (!$alreadyLiked) {
+                Likes::create([
+                    'user_id' => $userId,
+                    'liked_user_id' => $likedUserId,
+                ]);
+    
+                // Truy cập thông tin về người dùng thực hiện hành động like
+                $likingUser = User::find($userId);
+    
+                // Truy cập thông tin về người được like
+                $likedUser = User::find($likedUserId);
+    
+                // Trả về một phản hồi JSON cho trang like
+                return response()->json(['status' => 'Like-created-successfully', 'liking_user' => $likingUser, 'liked_user' => $likedUser]);
+            }
+    
+            // Nếu đã có like từ trước
+            return response()->json(['message' => 'You have already liked this user.']);
+        } else {
+            // Xử lý trường hợp người dùng chưa đăng nhập
+            // Có thể chuyển hướng họ đến trang đăng nhập hoặc xử lý theo cách khác
+            return response()->json(['error' => 'Please login to create a like.'], 401);
         }
-
-        // Kiểm tra xem đã có một like từ người dùng khác và đảo ngược không
-        $existingLike = Likes::where('user_id', $likedUserId)
-            ->where('liked_user_id', $userId)
-            ->exists();
-
-        // Kiểm tra xem đã có một like từ người dùng hiện tại cho người dùng khác không
-        $alreadyLiked = Likes::where('user_id', $userId)
-            ->where('liked_user_id', $likedUserId)
-            ->exists();
-
-        if ($existingLike && !$alreadyLiked) {
-            // Tạo match
-            Matches::create([
-                'user1_id' => $userId,
-                'user2_id' => $likedUserId,
-            ]);
-
-            // Trả về một phản hồi JSON cho trang match
-            return response()->json(['status' => 'Match-created-successfully']);
-        }
-
-        // Nếu không có match, chỉ tạo like
-        if (!$alreadyLiked) {
-            Likes::create([
-                'user_id' => $userId,
-                'liked_user_id' => $likedUserId,
-            ]);
-
-            // Trả về một phản hồi JSON cho trang like
-            return response()->json(['status' => 'Like-created-successfully']);
-        }
-
-        // Nếu đã có like từ trước
-        return response()->json(['message' => 'You have already liked this user.']);
-    } else {
-        // Xử lý trường hợp người dùng chưa đăng nhập
-        // Có thể chuyển hướng họ đến trang đăng nhập hoặc xử lý theo cách khác
-        return response()->json(['error' => 'Please login to create a like.'], 401);
     }
-}
+    
 }

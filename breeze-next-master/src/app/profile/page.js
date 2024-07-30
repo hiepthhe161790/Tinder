@@ -55,7 +55,7 @@ const Profile = () => {
         // Show a loading state while fetching data
         return <div>Loading...</div>;
     }
-    console.log(status);
+    // console.log(status);
     return (
         <div>
             {/* <div>Hello, {user?.name}</div>

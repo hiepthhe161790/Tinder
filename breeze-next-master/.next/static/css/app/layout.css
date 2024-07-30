@@ -1,5 +1,5 @@
 /*!****************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[12].use[3]!./src/app/global.css ***!
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/app/global.css ***!
   \****************************************************************************************************************************************************************************************************************************************************************/
 @import url("https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap");
 
@@ -643,6 +643,39 @@ select{
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.container{
+  width: 100%;
+}
+@media (min-width: 640px){
+
+  .container{
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px){
+
+  .container{
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px){
+
+  .container{
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px){
+
+  .container{
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px){
+
+  .container{
+    max-width: 1536px;
+  }
+}
 .static{
   position: static;
 }
@@ -654,12 +687,6 @@ select{
 }
 .relative{
   position: relative;
-}
-.inset-0{
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
 }
 .top-0{
   top: 0px;
@@ -710,15 +737,6 @@ select{
 .ml-2{
   margin-left: 0.5rem;
 }
-.mt-8{
-  margin-top: 2rem;
-}
-.ml-12{
-  margin-left: 3rem;
-}
-.-mt-px{
-  margin-top: -1px;
-}
 .block{
   display: block;
 }
@@ -727,9 +745,6 @@ select{
 }
 .inline-flex{
   display: inline-flex;
-}
-.grid{
-  display: grid;
 }
 .hidden{
   display: none;
@@ -748,12 +763,6 @@ select{
 }
 .h-20{
   height: 5rem;
-}
-.h-8{
-  height: 2rem;
-}
-.h-5{
-  height: 1.25rem;
 }
 .min-h-screen{
   min-height: 100vh;
@@ -779,20 +788,11 @@ select{
 .w-20{
   width: 5rem;
 }
-.w-8{
-  width: 2rem;
-}
-.w-5{
-  width: 1.25rem;
-}
 .max-w-xl{
   max-width: 36rem;
 }
 .max-w-7xl{
   max-width: 80rem;
-}
-.max-w-6xl{
-  max-width: 72rem;
 }
 .flex-shrink-0{
   flex-shrink: 0;
@@ -818,9 +818,6 @@ select{
 }
 .transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.grid-cols-1{
-  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 .flex-col{
   flex-direction: column;
@@ -852,6 +849,9 @@ select{
 }
 .rounded-md{
   border-radius: 0.375rem;
+}
+.rounded-full{
+  border-radius: 9999px;
 }
 .rounded{
   border-radius: 0.25rem;
@@ -913,12 +913,9 @@ select{
   --tw-bg-opacity: 1;
   background-color: rgb(238 242 255 / var(--tw-bg-opacity));
 }
-.bg-gray-500{
+.bg-pink-100{
   --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
-}
-.bg-opacity-75{
-  --tw-bg-opacity: 0.75;
+  background-color: rgb(252 231 243 / var(--tw-bg-opacity));
 }
 .fill-current{
   fill: currentColor;
@@ -926,8 +923,8 @@ select{
 .p-2{
   padding: 0.5rem;
 }
-.p-4{
-  padding: 1rem;
+.p-3{
+  padding: 0.75rem;
 }
 .p-6{
   padding: 1.5rem;
@@ -994,8 +991,8 @@ select{
 .text-left{
   text-align: left;
 }
-.text-center{
-  text-align: center;
+.text-right{
+  text-align: right;
 }
 .font-sans{
   font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -1035,9 +1032,6 @@ select{
 .leading-tight{
   line-height: 1.25;
 }
-.leading-7{
-  line-height: 1.75rem;
-}
 .tracking-wider{
   letter-spacing: 0.05em;
 }
@@ -1048,13 +1042,13 @@ select{
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
-.text-gray-500{
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
-}
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-gray-500{
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 .text-red-600{
   --tw-text-opacity: 1;
@@ -1136,6 +1130,9 @@ select{
 }
 .ring-opacity-5{
   --tw-ring-opacity: 0.05;
+}
+.filter{
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .transition{
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
@@ -1263,29 +1260,9 @@ select{
 }
 @media (prefers-color-scheme: dark){
 
-  .dark\:border-gray-700{
-    --tw-border-opacity: 1;
-    border-color: rgb(55 65 81 / var(--tw-border-opacity));
-  }
-
   .dark\:bg-gray-900{
     --tw-bg-opacity: 1;
     background-color: rgb(17 24 39 / var(--tw-bg-opacity));
-  }
-
-  .dark\:bg-gray-800{
-    --tw-bg-opacity: 1;
-    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-  }
-
-  .dark\:text-white{
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
-  }
-
-  .dark\:text-gray-400{
-    --tw-text-opacity: 1;
-    color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 }
 @media (min-width: 640px){
@@ -1303,10 +1280,6 @@ select{
     margin-left: 1.5rem;
   }
 
-  .sm\:ml-0{
-    margin-left: 0px;
-  }
-
   .sm\:block{
     display: block;
   }
@@ -1317,10 +1290,6 @@ select{
 
   .sm\:hidden{
     display: none;
-  }
-
-  .sm\:h-20{
-    height: 5rem;
   }
 
   .sm\:max-w-md{
@@ -1339,10 +1308,6 @@ select{
     justify-content: center;
   }
 
-  .sm\:justify-between{
-    justify-content: space-between;
-  }
-
   .sm\:rounded-lg{
     border-radius: 0.5rem;
   }
@@ -1354,28 +1319,6 @@ select{
 
   .sm\:pt-0{
     padding-top: 0px;
-  }
-
-  .sm\:text-left{
-    text-align: left;
-  }
-
-  .sm\:text-right{
-    text-align: right;
-  }
-}
-@media (min-width: 768px){
-
-  .md\:grid-cols-2{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .md\:border-t-0{
-    border-top-width: 0px;
-  }
-
-  .md\:border-l{
-    border-left-width: 1px;
   }
 }
 @media (min-width: 1024px){

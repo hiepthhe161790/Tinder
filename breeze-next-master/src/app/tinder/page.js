@@ -41,6 +41,11 @@ const Tinder = () => {
         setMessageStatus(status); // Cập nhật status của Message từ component con
         console.log("Message Status:", status);
       };
+      const handleMatchedUser = (matchedUser) => {
+        // Xử lý thông tin về người dùng vừa được match
+        console.log("Matched User:", matchedUser);
+        // Lưu thông tin người dùng vừa được match vào state hoặc thực hiện các hành động khác tùy ý
+      };
     return (
         <div className="">
             <div className="">
@@ -73,7 +78,7 @@ const Tinder = () => {
                                    <div> <User id={selectedUserId} /></div>  
                                    
                                 </div> 
-                                :  <Likes onStatusChange={handleLikesStatusChange} />}
+                                :  <Likes onStatusChange={handleLikesStatusChange} onMatchedUser={handleMatchedUser} />}
                         </div> 
                     </div>
                 </div>

@@ -1,0 +1,133 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/styles/tinder.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+.header {
+    background: linear-gradient(to bottom, rgba(254, 0, 102, 0.8), rgb(255 206 46 / 80%));
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav ul li {
+    margin-right: 20px;
+}
+
+.nav ul li button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.nav ul li button:hover,
+.nav ul li button.active {
+    color: #ff6b6b;
+}
+.container-tinder{
+    width: -moz-fit-content;
+    width: fit-content;
+  
+}
+
+
+.user-profile {
+    display: flex; /* Sử dụng flexbox để các phần tử con được xếp cạnh nhau */
+    align-items: center; /* Căn chỉnh các phần tử con theo chiều dọc */
+  }
+/* Rounded image */
+.rounded-image {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Bold user name */
+  .user-name {
+    font-weight: bold; /* Làm cho tên người dùng đậm hơn */
+    padding-left: 10px;
+    color: aliceblue;
+  }
+  .likes{
+    margin: 0px auto;
+  }
+
+
+  
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/styles/plan.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+.payment-container {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các phần tử con trên hàng mới khi không đủ không gian */
+}
+
+.payment-details {
+    flex: 1;
+    margin-right: 20px; /* Khoảng cách giữa các phần */
+    background-color: #f9f9f9; /* Màu nền để phân biệt giữa các phần */
+    border-radius: 8px; /* Bo tròn viền */
+    padding: 20px; /* Khoảng cách bên trong phần */
+    cursor: pointer; /* Con trỏ khi di chuột vào */
+    transition: all 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà */
+}
+
+.payment-details:hover {
+    transform: translateY(-5px); /* Di chuyển phần lên khi di chuột vào */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+
+.plan-details {
+    display: flex;
+    justify-content: space-between; /* Các phần tử con trong plan-details sẽ căn giữa và căn ra xa nhau */
+    margin-top: 20px;
+}
+
+.plan-details p {
+    margin: 0; /* Loại bỏ margin mặc định của các phần tử p */
+}
+
+.left-column,
+.right-column {
+    flex: 1; /* Các cột sẽ chiếm phần bằng nhau */
+}
+
+.left-column p,
+.right-column p {
+    margin-bottom: 10px; /* Khoảng cách giữa các mục */
+}
+
+.button {
+    background-color: #007bff; /* Màu nền */
+    color: #fff; /* Màu chữ */
+    border: none; /* Loại bỏ viền */
+    border-radius: 5px; /* Bo tròn viền */
+    padding: 10px 20px; /* Khoảng cách bên trong */
+    cursor: pointer; /* Con trỏ khi di chuột vào */
+    transition: background-color 0.3s ease; /* Hiệu ứng mượt mà khi hover */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+}
+

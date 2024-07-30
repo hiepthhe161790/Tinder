@@ -24,7 +24,7 @@ const updateProfile = async ({ setErrors, setStatus, ...props }) => {
     axios
         .put('/profile', props)
         .then(response => {
-            console.log(response)
+            // console.log(response)
             setStatus(response.data.status)})
         .catch(error => {
             if (error.response.status !== 422) throw error
@@ -41,7 +41,7 @@ const changePassword = async ({ setErrors, setStatus, ...props }) => {
     axios
         .put('/password', props)
         .then(response => {
-            console.log(response)
+            // console.log(response)
             setStatus(response.data.status)})
         .catch(error => {
             if (error.response.status !== 422) throw error

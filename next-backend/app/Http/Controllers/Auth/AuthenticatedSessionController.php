@@ -27,6 +27,12 @@ class AuthenticatedSessionController extends Controller
         
         exit();
     }
+    public function create()
+    {
+        return redirect()->intended(
+            config('app.frontend_url') . '/login?verified=0'
+        );
+    }
     // public function store(LoginRequest $request): Response
     // {
     //     $request->authenticate();

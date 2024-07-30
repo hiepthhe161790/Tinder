@@ -53,3 +53,14 @@
 .header-message{
 padding-right: 20px;
 }
+
+.chat-list {
+    max-height: 70vh; /* Đặt chiều cao tối đa cho danh sách tin nhắn */
+    overflow-y: auto; /* Cho phép cuộn nếu nội dung vượt quá kích thước danh sách */
+    padding: 0 10px; /* Thêm lề để tránh việc tin nhắn đụng lề */
+}
+
+/* Tùy chỉnh các tin nhắn */
+.chat-list li {
+    margin-bottom: 10px; /* Tạo khoảng cách giữa các tin nhắn */
+}

@@ -21,9 +21,7 @@ export const userMatch = ({ middleware, redirectIfAuthenticated } = {}) => {
         csrf()
     }, [])
     useEffect(() => {
-        if (!matchedUsers && error) {
-            router.push('/dashboard');
-        }
+      
     }, [matchedUsers, error]);
     return {
         matchedUsers,

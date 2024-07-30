@@ -7,6 +7,7 @@ import Link from 'next/link';
 import "./global.css"
 import Message from "../../app/messages/[id]/page"
 import Navigation from '../../app/matching/Navigation'
+import Payment from '../../app/subscription_plans/page'
 const MessengerComponent = ({ onUserSelect, messageStatus }) => {
     const { recentMessages, error, mutate } = userRecent({  
         middleware: 'auth',
@@ -32,6 +33,10 @@ const messagesArray = Object.values(recentMessages);
 
 return (
     <div className="messenger-container">
+        <Link href={`/subscription_plans`}>
+                        <div className="user-names">Buy tinder gold</div>
+                    </Link>
+                    <Payment/>
         <h2 className="messenger-header">Recent Messages</h2>
         <ul className="message-list">
             {messagesArray.map((message, index) => (

@@ -12,7 +12,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
-const Likes = ({ onStatusChange }) => {
+const Likes = ({ onStatusChange, onMatchedUser  }) => {
   const router = useRouter();
 
   const { users, error, createLike } = userLikes({
@@ -21,11 +21,15 @@ const Likes = ({ onStatusChange }) => {
   });
   const [status, setStatus] = useState(null);
   const [currentLikedUser, setCurrentLikedUser] = useState(null);
+ 
   useEffect(() => {
     if (status === 'Match-created-successfully') {
       onStatusChange(`${status} by ${currentLikedUser ? currentLikedUser.id : ''}`);
+      if (currentLikedUser) {
+        onMatchedUser(currentLikedUser); // Gửi thông tin người dùng vừa được match lên component cha
+      }
     }
-  }, [status, currentLikedUser, onStatusChange]);
+  }, [status, currentLikedUser, onStatusChange, onMatchedUser]);
   const [likedUsers, setLikedUsers] = useState([]);
   const [errors, setErrors] = useState([]);
   // const [status, setStatus] = useState(null);
@@ -51,6 +55,7 @@ const Likes = ({ onStatusChange }) => {
       // Lưu toàn bộ thông tin của người dùng đã thích vào state
       setCurrentLikedUser({ id: liked_user.id, name: liked_user.name });
       // Sau khi like thành công, chuyển sang card tiếp theo (nếu có)
+      // console.log('Liked User:', liked_user);
       setTimeout(() => {
         // Sau khi đã chờ 3 giây, chuyển trạng thái đang đợi về false và chuyển sang card tiếp theo
         setShowLikeText(false);
